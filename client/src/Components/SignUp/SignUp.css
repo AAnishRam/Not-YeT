@@ -1,0 +1,116 @@
+.signup-container {
+  background-image: url("../../assets/Images/signup_bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section-signup {
+  margin-left: 100vh;
+  padding: 40px;
+  width: 500px;
+  text-align: center;
+}
+
+.form-section-heading-signup {
+  font-size: 5vh;
+  color: #424242;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+}
+
+.form-group-signup {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.signup-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d5d0cb;
+  background-color: #fef6ef;
+  font-size: 16px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.create-btn {
+  background-color: #fce2ce;
+  color: #424242;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.create-btn:hover {
+  background-color: #e79c6e;
+}
+
+.signup-or {
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.alternate {
+  margin-top: 20px;
+  color: #8b8b8b;
+}
+
+.alternate a {
+  color: #e47947;
+  text-decoration: none;
+}
+
+.alternate a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  font-size: 1.5vh;
+  margin-top: 1.5vh;
+  color: rgb(221, 45, 45);
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 40px; /* Space for the icon */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888; /* Icon color */
+}
+
+.password-toggle-icon:hover {
+  color: #333; /* Change icon color on hover */
+}

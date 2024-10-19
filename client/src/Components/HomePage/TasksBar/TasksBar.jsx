@@ -79,7 +79,7 @@ export default function BasicTabs() {
         Workflow
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
-        Messages
+        <Messages />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
         <FileSharing/>

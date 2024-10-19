@@ -1,15 +1,14 @@
-import React from "react";
-import add from "../../assets/Images/add.png";
-import pc2 from "../../assets/Images/pc2.svg";
-import pc3 from "../../assets/Images/pc3.svg";
 import "./ProjectCreation.css";
 import { useNavigate } from "react-router-dom";
-
+import React from "react";
+import pc3 from "../../assets/Images/sp3.jpg";
+import sp2 from "../../assets/Images/sp2.jpg";
+import add from "../../assets/Images/add.jpg";
 const ProjectCreation = () => {
   const navi = useNavigate();
-  const toProjectCreateHome =() =>{
+  const toProjectCreateHome = () => {
     navi("/newProject");
-  }
+  };
   return (
     <div>
       <div className="tot-project-creation-page">
@@ -19,9 +18,12 @@ const ProjectCreation = () => {
         </div>
         <div className="project-creation-body">
           <div className="project-creation-boxes-container">
-            <div className="project-creation-boxes" onClick={toProjectCreateHome}>
+            <div
+              className="project-creation-boxes"
+              onClick={toProjectCreateHome}
+            >
               <div className="project-creation-inside-box">
-                <img src={add} alt="" height={25} width={25}/>
+                <img src={add} alt="" height={50} width={50} />
               </div>
               <div className="project-creation-description">
                 <h4>Blank Project</h4>
@@ -30,7 +32,7 @@ const ProjectCreation = () => {
             </div>
             <div className="project-creation-boxes">
               <div className="project-creation-inside-box">
-                <img src={pc2} alt="" height={25} width={25}/>
+                <img src={sp2} alt="" height={50} width={50} />
               </div>
               <div className="project-creation-description">
                 <h4>Blank Project</h4>
@@ -39,7 +41,7 @@ const ProjectCreation = () => {
             </div>
             <div className="project-creation-boxes">
               <div className="project-creation-inside-box">
-                <img src={pc3} alt="" height={25} width={25}/>
+                <img src={pc3} alt="" height={50} width={50} />
               </div>
               <div className="project-creation-description">
                 <h4>Blank Project</h4>

@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Overview from '../Overview/Overview';
-import TaskBoard from '../Lists/TaskBoard';
+import React from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import Overview from "../Overview/Overview";
+import TaskBoard from "../Lists/TaskBoard";
+import DocsBot from "../../DocsPage/ChatBot/DocsBot";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -31,7 +32,7 @@ CustomTabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -43,9 +44,13 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
           <Tab label="Overview" {...a11yProps(0)} />
           <Tab label="List" {...a11yProps(1)} />
           <Tab label="Dashboard" {...a11yProps(2)} />
@@ -57,10 +62,10 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Overview/>
+        <Overview />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <TaskBoard/>
+        <TaskBoard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         Dashboard
@@ -78,7 +83,7 @@ export default function BasicTabs() {
         Files
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
-        Docs
+        <DocsBot></DocsBot>
       </CustomTabPanel>
     </Box>
   );

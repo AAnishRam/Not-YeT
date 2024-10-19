@@ -22,7 +22,7 @@ const SignIn = () => {
       console.log("Login successful:", response.data);
 
       // Redirect to dashboard on successful login
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.error("Login failed:", error.response.data);
       setErrorMessage(error.response.data);
@@ -61,9 +61,6 @@ const SignIn = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          </div>
-          <div className="forgot-password">
-            <a href="/forgetPassword">Forgot Password?</a>
           </div>
           <button type="submit" className="login-btn">
             Login

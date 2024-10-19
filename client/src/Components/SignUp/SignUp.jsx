@@ -175,7 +175,7 @@ const SignUp = () => {
       console.log("Sign-up successful:", response.data);
 
       // Redirect on successful sign-up
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.error("Sign-up error:", error.response.data);
       setErrors({ submit: "Failed to create an account. Please try again." });

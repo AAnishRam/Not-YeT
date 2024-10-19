@@ -1,0 +1,47 @@
+.tot-project-creation-page {
+  margin: 0 auto;
+  background-color: #1e1f21;
+  padding: 4% 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.project-creation-boxes-container {
+  display: flex;
+  gap: 2vh;
+  margin-top: 5vh;
+}
+
+.project-creation-boxes {
+  padding: 3vh;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.project-creation-boxes:hover {
+  opacity: 0.7;
+
+}
+
+.project-creation-description {
+  margin-top: 7px;
+  font-size: 2vh;
+  text-align: center;
+}
+.project-creation-description p {
+  opacity: 0.5;
+}
+
+.project-creation-inside-box {
+  border: 1px dotted white;
+  border-radius: 10px;
+  padding: 7vh 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vh 0;
+}

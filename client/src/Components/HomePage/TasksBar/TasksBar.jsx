@@ -6,6 +6,8 @@ import Box from "@mui/material/Box";
 import Overview from "../Overview/Overview";
 import TaskBoard from "../Lists/TaskBoard";
 import DocsBot from "../../DocsPage/ChatBot/DocsBot";
+import FileSharing from "../../FileSharing/FileSharing";
+import CalendarPage from "../../Calendar/CalendarPage";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -71,7 +73,7 @@ export default function BasicTabs() {
         Dashboard
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        Calendar
+        <CalendarPage/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
         Workflow
@@ -80,7 +82,7 @@ export default function BasicTabs() {
         Messages
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
-        Files
+        <FileSharing/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
         <DocsBot></DocsBot>

@@ -1,0 +1,156 @@
+/* Container */
+.file-sharing {
+  padding: 30px;
+  background-color: #1e1f21;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.file-sharing__title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+/* Upload Section */
+.file-sharing__upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.file-sharing__upload-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.file-sharing__upload-input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #f39c12;
+  background-color: #2c2c2e;
+  color: white;
+  width: 100%;
+  outline: none;
+}
+
+.file-sharing__upload-input:hover {
+  border-color: #e67e22;
+}
+
+/* File List */
+.file-sharing__list {
+  margin-top: 20px;
+}
+
+.file-sharing__list-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.file-sharing__list-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.file-sharing__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.file-sharing__list-empty {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* File Entry */
+.file-sharing__file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.file-sharing__file-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+/* Actions */
+.file-sharing__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.file-sharing__permission-label {
+  font-size: 14px;
+  color: #f39c12;
+}
+
+.file-sharing__permission-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #f39c12;
+  background-color: #2c2c2e;
+  color: white;
+  outline: none;
+}
+
+.file-sharing__delete-btn {
+  padding: 8px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-sharing__delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Upload Button */
+.file-sharing__upload-btn {
+  padding: 12px 25px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.file-sharing__upload-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Success Message */
+.file-sharing__success-message {
+  text-align: center;
+  color: #2ecc71;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2c3e50;
+  border-radius: 8px;
+}

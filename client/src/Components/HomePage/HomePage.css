@@ -1,129 +1,106 @@
 /* General page styling */
-.total-homepage {
-  position: relative;
-  width: 100%;
+.homepage-container {
+  display: flex;
+  height: 100vh;
 }
 
-.homepage-body {
-  margin: 0 auto;
-  max-width: 100%;
+.sidebar {
+  background-color: #2196f3;
+  width: 250px;
+  color: white;
+  padding: 20px;
+  transition: width 0.3s ease;
+  height: 130%;
+}
+
+.sidebar.closed {
+  width: 70px;
+}
+.sidebar.closed li{
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sidebar .menu-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar.closed .sidebar-header h1{
+  display: none;
+}
+.logo {
+  font-size: 24px;
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
   padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar-nav ul li {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-nav ul li:hover {
+  background-color: #34495e;
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  background-color: #ecf0f1;
+  padding: 20px;
 }
 
-.homepage-topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
+.top-navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ddd;
-  z-index: 10;
-  padding: 0 20px;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.homepage-topbar-left {
-  display: flex;
-  align-items: center;
-  gap: 4vh;
-}
-
-.homepage-topbar-left img {
-  cursor: pointer;
-}
-
-.homepage-topbar-left-box-wrapper {
-  position: relative;
-}
-
-.homepage-topbar-left-box {
-  display: flex;
-  align-items: center;
-  gap: 2vh;
-  padding: 1vh 3vh;
-  border: 1px solid black;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.homepage-topbar-left-box-circle {
-  border: 1px transparent;
-  padding: 1vh 1.5vh;
-  border-radius: 40%;
-  background-color: orange;
+.top-navbar button {
+  border-radius: 8px;
+  background-color: #2196f3;
   color: white;
-}
-
-/* Create popup sidebar next to Create button */
-.create-popup {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 200px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-.create-popup ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.create-popup li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  padding: 2vh;
+  border: 0;
   cursor: pointer;
 }
 
-/* Side menu styling */
-.homepage-topbar-toggle-sidenav {
-  position: absolute;
-  top: 60px; /* Right below the fixed topbar */
-  left: 0;
-  height: calc(100% - 60px); /* Take the remaining height */
-  width: 250px;
-  background-color: aliceblue;
-  padding: 1vh 4vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 9;
-  transition: all 0.3s ease; /* Smooth transition */
-}
-
-
-
-.homepage-topbar-toggle-sidenav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.homepage-topbar-toggle-sidenav li {
-  text-decoration: none;
-  font-size: 3vh;
-  margin-bottom: 20px;
-  list-style-type: none;
+.profile-section {
   cursor: pointer;
 }
-.homepage-topbar-toggle-sidenav li:hover{
-  color: #888181;
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
 }
 
-/* Profile dropdown styling */
 .profile-dropdown {
   position: absolute;
   top: 60px;
-  right: 0;
-  width: 200px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  right: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 100;
 }
 
 .profile-dropdown ul {
@@ -131,85 +108,75 @@
   padding: 0;
 }
 
-.profile-dropdown li {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+.profile-dropdown ul li {
+  padding: 10px 0;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.homepage-center-page {
+.profile-dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Page content */
+.page-content {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px; 
-  padding: 20px;
-  transition: width 0.3s ease-in-out;
+  gap: 20px;
 }
 
-.homepage-center-page-move {
-  width: 50%; 
+.project-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.homepage-center-page-full {
-  width: 100%; 
+.project-header p {
+  font-size: 16px;
+  color: #7f8c8d;
 }
 
-/* Project header styling */
-.homepage-project-header {
+.project-cards {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2vh;
-  border: 1px solid #ddd;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: white;
   border-radius: 8px;
-  background-color: #f5f5f5;
+  padding: 20px;
+  flex-grow: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.homepage-project-header-left h1 {
-  font-size: 2.5vh;
-  margin-bottom: 1vh;
+.project-card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-.homepage-project-header-left p {
-  font-size: 2vh;
-  margin-bottom: 2vh;
-  color: #555;
+.project-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #7f8c8d;
 }
 
-/* Progress bar */
-.homepage-project-progress {
-  display: flex;
-  align-items: center;
-  gap: 1vh;
-}
-
-.progress-bar {
-  width: 200px;
+.project-progress-bar {
+  background-color: #ecf0f1;
   height: 10px;
-  background-color: #ddd;
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.progress {
+.project-progress-bar .progress {
   height: 100%;
-  background-color: green;
+  background-color: #27ae60;
 }
 
-.team-members {
-  display: flex;
-  gap: 1vh;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2vh;
-  color: white;
+.tasks-tabs {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

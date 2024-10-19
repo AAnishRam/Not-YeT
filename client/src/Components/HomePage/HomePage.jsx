@@ -1,87 +1,70 @@
 import React, { useState } from "react";
 import "./HomePage.css";
-import menu from "../../assets/Images/menu.png";
-import prof from "../../assets/Images/profile.png";
-import ColorTabs from "./TasksBar/TasksBar";
-import BasicTabs from "./TasksBar/TasksBar";
+import menuIcon from "../../assets/Images/menu.png";
+import profileIcon from "../../assets/Images/profile.png";
+import BasicTabs from "./TasksBar/TasksBar"; // Assuming this handles task tabs
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
-  const handleCreateToggle = () => setIsCreateOpen(!isCreateOpen);
+  const handleSidebarToggle = () => setIsSidebarOpen(!isSidebarOpen);
   const handleProfileToggle = () => setIsProfileOpen(!isProfileOpen);
 
+  const navi = useNavigate();
+  const handleSubmit = () =>{ 
+    navi("/feedback");
+  }
+
+  const naviProject = () => {
+    navi("/projectCreation");
+  }
+
   return (
-    <div className={`total-homepage ${isMenuOpen ? "menu-open" : ""}`}>
-      <div className={`homepage-body ${isMenuOpen ? "menu-active" : ""}`}>
-        <div className="homepage-topbar">
-          <div className="homepage-topbar-left">
-            {/* Toggle menu on click */}
-            <img
-              src={menu}
-              alt="menu"
-              height={35}
-              width={35}
-              onClick={handleMenuToggle}
-            />
-            <div className="homepage-topbar-left-box-wrapper">
-              <button
-                className="homepage-topbar-left-box"
-                onClick={handleCreateToggle}
-              >
-                <div className="homepage-topbar-left-box-circle">+</div>
-                Create
-              </button>
-
-              {/* Create Popup Sidebar next to Create button */}
-              {isCreateOpen && (
-                <div className="create-popup">
-                  <ul>
-                    <li>Create Task</li>
-                    <li>Create Project</li>
-                    <li>Create Message</li>
-                    <li>Create Hurdle</li>
-                    <li>Create Meeting</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="homepage-topbar-center">
-            <h1>NOT-YET</h1>
-          </div>
-          <div className="homepage-topbar-right">
-            {/* Toggle profile dropdown on click */}
-            <img
-              src={prof}
-              alt="profile"
-              height={35}
-              width={35}
-              onClick={handleProfileToggle}
-            />
-          </div>
+    <div
+      className={`homepage-container ${
+        isSidebarOpen ? "sidebar-open" : "sidebar-closed"
+      }`}
+    >
+      {/* Sidebar */}
+      <aside className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
+        <div className="sidebar-header">
+          <img
+            src={menuIcon}
+            alt="menu"
+            className="menu-icon"
+            onClick={handleSidebarToggle}
+          />
+          <h1 className="logo">NOT-YET</h1>
         </div>
+        <nav className="sidebar-nav">
+          <ul>
+            <li>Dashboard</li>
+            <li>My Tasks</li>
+            <li>Projects</li>
+            <li>Meetings</li>
+            <li>Reports</li>
+            <li>Settings</li>
+            <li onClick={handleSubmit}>Feedback</li>
+          </ul>
+        </nav>
+      </aside>
 
-        {/* Side Menu */}
-        {isMenuOpen && (
-          <div className="homepage-topbar-toggle-sidenav">
-            <ul>
-              <li>Dashboard</li>
-              <li>My Tasks</li>
-              <li>Projects</li>
-              <li>Meetings</li>
-            </ul>
+      {/* Main Content Area */}
+      <div className="main-content">
+        {/* Top Navbar */}
+        <header className="top-navbar">
+          <button onClick={naviProject}>Create Project</button>
+          <div className="profile-section" onClick={handleProfileToggle}>
+            <img src={profileIcon} alt="profile" className="profile-icon" />
           </div>
-        )}
+        </header>
 
         {/* Profile Dropdown */}
         {isProfileOpen && (
           <div className="profile-dropdown">
             <ul>
-              <li>Create New Workspace</li>
               <li>Profile</li>
               <li>Settings</li>
               <li>Logout</li>
@@ -89,45 +72,46 @@ const HomePage = () => {
           </div>
         )}
 
-        <div className="homepage-center-page">
-          <div
-            className={
-              isMenuOpen
-                ? "homepage-center-page-move"
-                : "homepage-center-page-full"
-            }
-          >
-            <div className="homepage-project-header">
-              <div className="homepage-project-header-left">
-                <h1>Project Title</h1>
-                <p>
-                  Description of the project goes here. It outlines the purpose,
-                  goals, and tasks involved in the project.
-                </p>
-                <div className="homepage-project-progress">
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: "0%" }}></div>
-                  </div>
-                  <span>0% Complete</span>
-                </div>
+        {/* Main Page Content */}
+        <section className="page-content">
+          <div className="project-header">
+            <h1>Active Projects</h1>
+            <p>Here are your current projects and tasks.</p>
+          </div>
+
+          {/* Projects Section */}
+          <div className="project-cards">
+            <div className="project-card">
+              <h2>Project 1</h2>
+              <p>Project description and task breakdown.</p>
+              <div className="project-progress-bar">
+                <div className="progress" style={{ width: "50%" }}></div>
               </div>
-              <div className="homepage-project-header-right">
-                <div className="homepage-project-header-right-list">
-                  <p>Team Members:</p>
-                  <div className="team-members">
-                    <div className="avatar">A</div>
-                    <div className="avatar">B</div>
-                    <div className="avatar">C</div>
-                  </div>
-                </div>
-                <button>Invite</button>
+              <span>50% Complete</span>
+            </div>
+            <div className="project-card">
+              <h2>Project 2</h2>
+              <p>Project description and task breakdown.</p>
+              <div className="project-progress-bar">
+                <div className="progress" style={{ width: "75%" }}></div>
               </div>
+              <span>75% Complete</span>
+            </div>
+            <div className="project-card">
+              <h2>Project 3</h2>
+              <p>Project description and task breakdown.</p>
+              <div className="project-progress-bar">
+                <div className="progress" style={{ width: "30%" }}></div>
+              </div>
+              <span>30% Complete</span>
             </div>
           </div>
-          <div className="tasks-bar-menu-bar">
+
+          {/* Task Tabs */}
+          <div className="tasks-tabs">
             <BasicTabs />
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

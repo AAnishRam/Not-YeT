@@ -21,8 +21,11 @@ const SignIn = () => {
 
       console.log("Login successful:", response.data);
 
+      // Store user details in local storage
+      localStorage.setItem("userDetails", JSON.stringify(response.data));
+
       // Redirect to dashboard on successful login
-      navigate("/");
+      navigate("/projectCreation");
     } catch (error) {
       console.error("Login failed:", error.response.data);
       setErrorMessage(error.response.data);

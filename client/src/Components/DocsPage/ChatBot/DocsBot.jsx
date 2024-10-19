@@ -42,12 +42,14 @@ const DocsBot = () => {
       const prompt = `Reply to the following prompt: "${inputText}"`;
       const result = await model.generateContent(prompt);
 
-      // Extract and handle the response
+      // Extract the response and ensure it's formatted exactly as returned
       const response = await result.response.text();
+
+      // Update chat history with the exact same response format
       setChatHistory((prevChatHistory) =>
         prevChatHistory.map((message, index) =>
           index === prevChatHistory.length - 1
-            ? { ...message, response }
+            ? { ...message, response } // Preserve exact formatting of the response
             : message
         )
       );
@@ -147,7 +149,11 @@ const DocsBot = () => {
                   {message.response === "Loading..." ? (
                     <CircularProgress size={20} />
                   ) : (
-                    message.response
+                    <pre
+                      style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}
+                    >
+                      {message.response}
+                    </pre>
                   )}
                 </TableCell>
               </TableRow>

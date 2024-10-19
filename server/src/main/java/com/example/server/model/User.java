@@ -1,6 +1,7 @@
 package com.example.server.model;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users") // This will map to a "users" table in SQL
@@ -23,11 +24,12 @@ public class User {
     public User() {
     }
 
-    // Constructor with fields
-    public User(String email, String username, String password) {
+    public User(Long id, String email, String username, String password) {
+        this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
+
     }
 
     // Getters and Setters
@@ -62,4 +64,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

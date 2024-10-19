@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Overview from "../Overview/Overview";
 import TaskBoard from "../Lists/TaskBoard";
 import DocsBot from "../../DocsPage/ChatBot/DocsBot";
+import Messages from "../Messages/Messages";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -77,7 +78,7 @@ export default function BasicTabs() {
         Workflow
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
-        Messages
+        <Messages />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
         Files

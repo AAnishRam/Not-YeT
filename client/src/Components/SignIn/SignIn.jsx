@@ -63,7 +63,7 @@ const SignIn = () => {
             />
           </div>
           <div className="forgot-password">
-            <a href="#">Forgot Password?</a>
+            <a href="/forgetPassword">Forgot Password?</a>
           </div>
           <button type="submit" className="login-btn">
             Login

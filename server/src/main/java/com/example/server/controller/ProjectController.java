@@ -2,6 +2,10 @@ package com.example.server.controller;
 
 import com.example.server.model.Project;
 import com.example.server.service.ProjectService;
+
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +35,29 @@ public class ProjectController {
             return ResponseEntity.badRequest().body(null); // Return error if user not found
         }
     }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Project>> getProjectsByUserId(@PathVariable("userId") Long userId) {
+        List<Project> projects = projectService.getProjectsByUserId(userId);
+        if (projects.isEmpty()) {
+            return ResponseEntity.noContent().build(); // Return 204 No Content if no projects
+        }
+        return ResponseEntity.ok(projects); // Return the list of projects
+    }
+
+    // In ProjectController
+    @PostMapping("/{projectId}/add-member")
+    public ResponseEntity<Project> addMemberToProject(@PathVariable Long projectId,
+            @RequestBody Map<String, String> request) {
+        String username = request.get("username");
+        try {
+            Project updatedProject = projectService.addMemberToProject(projectId, username);
+            return ResponseEntity.ok(updatedProject);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(null); // Handle errors accordingly
+        }
+    }
+
 }
 
 // Request body class to hold project creation details

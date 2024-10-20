@@ -16,7 +16,7 @@
 .sidebar.closed {
   width: 70px;
 }
-.sidebar.closed li{
+.sidebar.closed li {
   display: none;
 }
 
@@ -33,7 +33,7 @@
   height: 30px;
 }
 
-.sidebar.closed .sidebar-header h1{
+.sidebar.closed .sidebar-header h1 {
   display: none;
 }
 .logo {
@@ -179,4 +179,8 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.project-card.selected {
+  border: 2px solid #2196f3;
+  background-color: #e3f2fd;
 }

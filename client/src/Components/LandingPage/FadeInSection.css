@@ -1,0 +1,11 @@
+.fade-in-section {
+  transition: opacity 1s;
+}
+
+.fade-in-section-visible {
+  opacity: 1;
+}
+
+.fade-in-section-hidden {
+  opacity: 0;
+}

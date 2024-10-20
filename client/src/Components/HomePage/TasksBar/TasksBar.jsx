@@ -8,6 +8,8 @@ import TaskBoard from "../Lists/TaskBoard";
 import DocsBot from "../../DocsPage/ChatBot/DocsBot";
 import FileSharing from "../../FileSharing/FileSharing";
 import CalendarPage from "../../Calendar/CalendarPage";
+import CommunicationPage from "../../Communication/CommunicationPage";
+import ComingSoon from "../../ComingSoon/ComingSoon";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -38,7 +40,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({ selectedProject }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -57,34 +59,31 @@ export default function BasicTabs() {
           <Tab label="List" {...a11yProps(1)} />
           <Tab label="Dashboard" {...a11yProps(2)} />
           <Tab label="Calendar" {...a11yProps(3)} />
-          <Tab label="Workflow" {...a11yProps(4)} />
-          <Tab label="Messages" {...a11yProps(5)} />
-          <Tab label="Files" {...a11yProps(6)} />
-          <Tab label="Docs" {...a11yProps(7)} />
+          <Tab label="Messages" {...a11yProps(4)} />
+          <Tab label="Files" {...a11yProps(5)} />
+          <Tab label="Docs" {...a11yProps(6)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Overview />
+        {/* Pass selectedProject to Overview */}
+        <Overview selectedProject={selectedProject} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <TaskBoard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Dashboard
+        <ComingSoon />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <CalendarPage/>
+        <CalendarPage />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        Workflow
+        <CommunicationPage />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
-        <Messages />
+        <FileSharing />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
-        <FileSharing/>
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={7}>
         <DocsBot></DocsBot>
       </CustomTabPanel>
     </Box>

@@ -1,0 +1,70 @@
+.aboutus-container {
+  margin-top: 5rem;
+  color: #2c2727;
+}
+
+.aboutus-title {
+  font-size: 1.875rem; /* This is 3xl */
+  text-align: center;
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.aboutus-title .aboutus-highlight {
+  background: linear-gradient(to right, #2196f3, #4caf50);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (min-width: 640px) {
+  .aboutus-title {
+    font-size: 3.125rem; /* 5xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutus-title {
+    font-size: 3.75rem; /* 6xl */
+  }
+}
+
+.aboutus-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutus-section {
+  padding-top: 3rem;
+  width: 100%;
+}
+
+.aboutus-item {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.aboutus-icon-container {
+  color: #3e3939;
+  background-color: #3e3939;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  margin-right: 1.5rem;
+}
+
+.aboutus-item-title {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem; /* This is xl */
+}
+
+.aboutus-item-description {
+  font-size: 1rem;
+  color: #3e3939;
+}

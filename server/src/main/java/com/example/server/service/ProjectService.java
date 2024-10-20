@@ -7,6 +7,7 @@ import com.example.server.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,4 +39,28 @@ public class ProjectService {
             throw new IllegalArgumentException("User with ID " + userId + " not found");
         }
     }
+
+    public List<Project> getProjectsByUserId(Long userId) {
+        return projectRepository.findByUserId(userId);
+    }
+
+    // In ProjectService
+    public Project addMemberToProject(Long projectId, String username) {
+        Optional<Project> projectOptional = projectRepository.findById(projectId);
+        Optional<User> userOptional = userRepository.findByUsername(username);
+
+        if (projectOptional.isPresent() && userOptional.isPresent()) {
+            Project project = projectOptional.get();
+            User user = userOptional.get();
+
+            // Add logic here to add the user to the project's member list (if applicable)
+            // For example, if you have a list of users in your Project model:
+            // project.getMembers().add(user);
+
+            return projectRepository.save(project); // Save the updated project
+        } else {
+            throw new IllegalArgumentException("Project or User not found");
+        }
+    }
+
 }

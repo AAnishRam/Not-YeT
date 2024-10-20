@@ -3,6 +3,10 @@ package com.example.server.model;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+
 @Entity
 @Table(name = "users") // This will map to a "users" table in SQL
 public class User {

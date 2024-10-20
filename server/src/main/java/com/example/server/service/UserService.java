@@ -5,6 +5,7 @@ import com.example.server.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,5 +21,10 @@ public class UserService {
     // Get user by email and password (sign-in)
     public Optional<User> getUser(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password);
+    }
+
+    // Get all users
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

@@ -8,40 +8,71 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+.tot-project-creation-header h1 {
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tot-project-creation-header h2 {
+  font-size: 2.5vh;
+  opacity: 0.8;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .project-creation-boxes-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2vh;
   margin-top: 5vh;
 }
 
 .project-creation-boxes {
-  padding: 3vh;
-  transition: all 0.5s ease;
+  background-color: #292b2c;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
 }
 
 .project-creation-boxes:hover {
-  opacity: 0.7;
-
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-.project-creation-description {
-  margin-top: 7px;
-  font-size: 2vh;
-  text-align: center;
+.project-creation-description h4 {
+  font-size: 2.2vh;
+  font-weight: bold;
+  margin: 15px 0 10px;
 }
+
 .project-creation-description p {
-  opacity: 0.5;
+  opacity: 0.7;
+  font-size: 1.8vh;
 }
 
 .project-creation-inside-box {
-  border: 1px dotted white;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   padding: 7vh 1vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4vh 0;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.project-creation-inside-box:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }

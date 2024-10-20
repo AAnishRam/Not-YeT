@@ -1,0 +1,132 @@
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.75rem;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #3e3939;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.navbar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #2196f3;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar-links {
+    display: flex;
+    margin-left: 3.5rem;
+    gap: 3rem;
+  }
+}
+
+.navbar-link-item {
+  list-style: none;
+}
+
+.navbar-link {
+  color: #2c2727;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: #ff7517;
+  border-bottom: 2px solid #ff7517;
+}
+
+.navbar-mobile-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-mobile-button {
+  color: #ff7517;
+}
+
+.navbar-login-btn {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar-login-btn {
+    display: block;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .navbar-login-btn:hover {
+    background-color: #0d47a1;
+  }
+}
+
+.navbar-mobile-drawer {
+  position: fixed;
+  right: 0;
+  z-index: 20;
+  background-color: #f6f4f4;
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-mobile-links {
+  padding: 0;
+}
+
+.navbar-mobile-link-item {
+  padding: 1rem 0;
+}
+
+.navbar-mobile-link {
+  color: #2c2727;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.navbar-mobile-link:hover {
+  color: #ff7517;
+}
+
+.navbar-mobile-login-btn {
+  background-color: #2196f3;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-mobile-login-btn:hover {
+  background-color: #0d47a1;
+}
